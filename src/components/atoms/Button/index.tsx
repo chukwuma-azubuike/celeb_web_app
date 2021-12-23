@@ -24,14 +24,14 @@ export default function Button({
   type,
   onClick,
 }: Props) {
+
   return (
     <button
       className={`
-        py-3 rounded-lg font-medium text-xl font-sans
-        shadow-xl h-14 box-border
+        py-3 rounded-lg font-medium text-xl font-sans shadow-xl h-14 box-border
         ${secondary ? "text-transparent bg-clip-text bg-gradient-to-r from-lightPurple to-purple" : "text-white"} 
-        ${!disabled && "hover:opacity-80"} ${disabled && "opacity-50"}
         ${secondary ? "bg-transparent border-purple" : "bg-buttonGradient border-none"}
+        ${!disabled && "hover:opacity-80"} ${disabled && "opacity-50"}
         ${width ? width : "w-full"} ${className}
         ${!disabled && "cursor-pointer"}
       `}

@@ -27,4 +27,4 @@ export const secondary = () => <Button width="w-48" secondary>Secondary</Button>
 
 export const secondaryLoading = () => <Button width="w-48" secondary loading>Secondary</Button>;
 
-export const secondaryDisabled = () => <Button width="w-48" secondary disabled>Secondary</Button>;
+export const secondaryDisabled = () => <Button width="w-48" secondary disabled>Secondary disabled</Button>;
