@@ -32,7 +32,7 @@ export default function Text({
   return (
     <p
       className={`
-      text-base my-2 
+      text-base my-2 dark:text-white
       ${large && 'text-lg'} ${medium && 'text-base'} ${small && 'text-sm'} ${xSmall && 'text-xs'}
       ${light && "font-light"} ${bold && "font-bold"}
       ${tone ? tone : 'text-primaryGrey-400'}

@@ -1,0 +1,12 @@
+.MuiTextField-root{
+    /* border-radius: 8px; */
+}
+
+/* Style Overides */
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input,
+.css-1pntms3-MuiInputBase-root-MuiOutlinedInput-root,
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+    /* border-radius: 0.5rem !important; */
+    /* color: white !important; */
+    /* border-color: white; */
+}
