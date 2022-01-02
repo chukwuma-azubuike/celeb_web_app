@@ -2,6 +2,8 @@ export const ThemeColors = {
   primaryGradient: "linear-gradient(267.61deg, #7708BE 38.06%, #0000EA 96.12%)",
   primaryGreen: "#009846",
   primaryGrey: "#888888",
+  primaryPurple: "#7708be",
+  transparentGrey: "#88888860",
 };
 
 // Dark Mode Logic

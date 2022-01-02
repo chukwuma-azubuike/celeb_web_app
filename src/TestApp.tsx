@@ -13,10 +13,10 @@ import { DarkModeSwitch, ToggleSwitch } from "./components/atoms/ToggleSwitch";
 import { getToggleState } from "./utils/HandleInputs";
 import Checkbox from "./components/atoms/CheckBox";
 import LinearProgressBar from "./components/atoms/LinearProgress";
-import LinearStepper from "./components/atoms/Stepper";
 import RatingStar from "./components/atoms/Rating";
-import Chips from "./components/atoms/Chip";
 import Chip from "./components/atoms/Chip";
+import CustomizedSlider from "./components/atoms/Slider";
+import Stepper from "./components/composite/Stepper";
 
 export default function TestApp() {
   // localStorage.setItem("theme", "dark");
@@ -62,9 +62,18 @@ export default function TestApp() {
         label="Dark Mode"
         onChange={(e, c) => console.log(getToggleState(e, c))}
       />
+      <CustomizedSlider onChange={(event, value) => console.log(value)} />
       <Checkbox onChange={(e, c) => console.log(getToggleState(e, c))} />
       <LinearProgressBar progress={25} />
-      <LinearStepper steps={["Build", "Test", "Document", "Deploy"]} />
+      <Stepper
+        steps={[
+          { label: "Build", info: "Contruction On the go" },
+          { label: "Test", info: "Lab works" },
+          { label: "Document", info: "The Boring part" },
+          { label: "Deploy", info: "Off to the Rockets" },
+        ]}
+        finishInfo='And We Are Live!!!'
+      />
       <RatingStar handleRating={(rating) => console.log(rating)} />
       {/* <Chips onClick={(e) => console.log("Event==>", e)} /> */}
       <div className="flex">
@@ -73,7 +82,7 @@ export default function TestApp() {
           active
           id="chuks"
           onClick={(e) => {
-            console.log(e.target.id);
+            // console.log(e.target.id);
           }}
         />
         <Chip
@@ -82,7 +91,7 @@ export default function TestApp() {
           disabled
           id="timi"
           onClick={(e) => {
-            console.log(e.target.id);
+            // console.log(e.target.id);
           }}
         />
         <Chip
@@ -90,7 +99,7 @@ export default function TestApp() {
           id="ty"
           active={false}
           onClick={(e) => {
-            console.log(e.target.id);
+            // console.log(e.target.id);
           }}
         />
         <Chip
@@ -99,7 +108,7 @@ export default function TestApp() {
           active={false}
           disabled
           onClick={(e) => {
-            console.log(e.target.id);
+            // console.log(e.target.id);
           }}
         />
       </div>
