@@ -7,7 +7,6 @@ import Text from "./components/atoms/Text";
 import tutu from "./assets/images/tutu06.jpg";
 import ty from "./assets/images/ty.jpg";
 import timi from "./assets/images/timi.jpg";
-import TextInput from "./components/atoms/TextInput";
 import DropDown from "./components/atoms/DropDown/index";
 import { DarkModeSwitch, ToggleSwitch } from "./components/atoms/ToggleSwitch";
 import { getToggleState } from "./utils/HandleInputs";
@@ -17,6 +16,7 @@ import RatingStar from "./components/atoms/Rating";
 import Chip from "./components/atoms/Chip";
 import CustomizedSlider from "./components/atoms/Slider";
 import Stepper from "./components/composite/Stepper";
+import Input from "./components/atoms/Input";
 
 export default function TestApp() {
   // localStorage.setItem("theme", "dark");
@@ -42,17 +42,14 @@ export default function TestApp() {
         menuLabel="Founders"
         menuList={["Timi", "Ty", "Chuks", "Regz"]}
       />
-      <TextInput
-        id="jimoh"
-        placeholder="Regular"
-        onChange={() => console.log()}
-      />
-      <TextInput
-        id="error"
+      <Input search />
+      <Input email />
+      <Input password />
+      <Input placeholder="Random" />
+      <Input
         placeholder="Error"
-        onChange={() => console.log("Input change")}
-        helperText="Error message"
         error
+        helperText="Holla, error message comes here!"
       />
       <ToggleSwitch
         label="Primary Toggle"
@@ -72,7 +69,7 @@ export default function TestApp() {
           { label: "Document", info: "The Boring part" },
           { label: "Deploy", info: "Off to the Rockets" },
         ]}
-        finishInfo='And We Are Live!!!'
+        finishInfo="And We Are Live!!!"
       />
       <RatingStar handleRating={(rating) => console.log(rating)} />
       {/* <Chips onClick={(e) => console.log("Event==>", e)} /> */}

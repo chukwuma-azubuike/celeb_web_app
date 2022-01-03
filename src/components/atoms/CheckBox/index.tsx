@@ -74,6 +74,7 @@ export default function CheckBox(
       <Checkbox
         sx={{
           "&:hover": { bgcolor: "transparent" },
+          margin: 0,
         }}
         disableRipple
         color="default"

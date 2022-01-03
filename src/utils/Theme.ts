@@ -6,6 +6,10 @@ export const ThemeColors = {
   transparentGrey: "#88888860",
 };
 
+export const dimension = {
+  inputHeight: "56.62px",
+};
+
 // Dark Mode Logic
 export class darkMode {
   setDarkMode = () => {

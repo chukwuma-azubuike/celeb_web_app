@@ -5,6 +5,7 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
+import { dimension } from "../../../utils/Theme";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -56,7 +57,7 @@ export default function DropDown({
 
   return (
     <div>
-      <FormControl sx={{ m: 1, width: 300 }}>
+      <FormControl sx={{ m: 0, width: '100%', height: dimension.inputHeight }}>
         <InputLabel id={menuId}>{menuLabel}</InputLabel>
         <Select
           labelId="demo-multiple-name-label"

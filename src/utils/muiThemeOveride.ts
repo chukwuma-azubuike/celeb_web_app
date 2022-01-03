@@ -14,7 +14,7 @@ export const muiThemeOveride = createTheme({
           }
         `,
     },
-    MuiInput: {
+    MuiTextField: {
       styleOverrides: {
         root: {
           borderRadius: 8,
@@ -22,18 +22,15 @@ export const muiThemeOveride = createTheme({
         },
       },
     },
-    MuiStepIcon: {
-      styleOverrides: {
-        active: {
-          // color: "transparent",
-          // backgroundImage: ThemeColors.primaryGradient,
-          // borderRadius: "4pc",
-        },
-        completed: {
-          // color: "red",
-          // backgroundColor:'red'
-        },
-      },
-    },
+    // MuiOutlinedInput:{
+    //   styleOverrides:{
+    //     input:{
+    //       color:ThemeColors.primaryGradient
+    //     },
+    //     root:{
+    //       borderInlineColor: ThemeColors.primaryGradient
+    //     }
+    //   }
+    // }
   },
 });
