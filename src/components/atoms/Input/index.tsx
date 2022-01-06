@@ -96,8 +96,9 @@ export default function Input({
           //   label="With normal TextField"
           //   id="search"
           sx={{ width: "100%" }}
-          placeholder="Search"
+          placeholder="Search..."
           value={searchValue}
+          inputProps={{ steps: 100 }}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">

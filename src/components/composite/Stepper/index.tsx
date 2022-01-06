@@ -10,7 +10,6 @@ interface StepHeadProps {
 }
 
 const StepHead = ({ count, label, currentStep }: StepHeadProps) => {
-  console.log(count);
   return (
     <div className="flex items-center justify-center">
       <div
@@ -52,7 +51,6 @@ export default function Stepper({
     <div className="grid grid-rows-3 gap-5">
       <div className="flex-row flex justify-between items-center my-2">
         {steps.map((step, headIndex) => {
-          console.log(headIndex);
           return (
             <StepHead
               key={headIndex}
@@ -66,7 +64,9 @@ export default function Stepper({
       <div>
         {steps.map(
           (step, index) =>
-            index === currentStep && <StepBody>{step.info}</StepBody>
+            index === currentStep && (
+              <StepBody key={index}>{step.info}</StepBody>
+            )
         )}
         {currentStep === steps.length && <StepBody>{finishInfo}</StepBody>}
       </div>

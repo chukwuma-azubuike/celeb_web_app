@@ -11,9 +11,9 @@ module.exports = {
         lightPurple: '#0000EA',
         primaryGrey: {
           '400': '#222222',
-          '300': '#333333',
-          '200': '#555555',
-          '100': '#888888'
+          '300': '#888888',
+          '200': '#DCDCDC',
+          '100': '#F8F8F8'
         },
         primaryBlue: {
           '400': '#0000EA',
@@ -54,6 +54,13 @@ module.exports = {
         bold: '700',
         regular: '400',
         light: '200'
+      },
+      gridTemplateColumns: {
+        'top-nav': 'auto auto',
+        'footer': '200px minmax(900px, 1fr) 100px',
+      },
+      gridTemplateRows:{
+        'footer': 'auto 300px',
       }
     },
   },

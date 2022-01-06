@@ -53,14 +53,14 @@ export default function TestApp() {
       />
       <ToggleSwitch
         label="Primary Toggle"
-        onChange={(e, c) => console.log(getToggleState(e, c))}
+        // onChange={(e, c) => console.log(getToggleState(e, c))}
       />
       <DarkModeSwitch
         label="Dark Mode"
-        onChange={(e, c) => console.log(getToggleState(e, c))}
+        // onChange={(e, c) => console.log(getToggleState(e, c))}
       />
-      <CustomizedSlider onChange={(event, value) => console.log(value)} />
-      <Checkbox onChange={(e, c) => console.log(getToggleState(e, c))} />
+      <CustomizedSlider />
+      <Checkbox />
       <LinearProgressBar progress={25} />
       <Stepper
         steps={[
@@ -71,7 +71,7 @@ export default function TestApp() {
         ]}
         finishInfo="And We Are Live!!!"
       />
-      <RatingStar handleRating={(rating) => console.log(rating)} />
+      <RatingStar handleRating={(rating) => null} />
       {/* <Chips onClick={(e) => console.log("Event==>", e)} /> */}
       <div className="flex">
         <Chip

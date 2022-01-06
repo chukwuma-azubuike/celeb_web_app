@@ -2,7 +2,7 @@ import React from "react";
 import logoTextColor from "../../../assets/svg/logo_text_color.svg";
 
 interface Props {
-  variant:
+  variant?:
     | "logo_text_color"
     | "logo_text_black"
     | "logo_text_white"
@@ -12,8 +12,8 @@ interface Props {
     | "text_color"
     | "text_black"
     | "text_white";
-  size: "lg" | "md" | "sm" | "w-44" | "w-32" | "w-20";
-  ClassName?: string
+  size?: "lg" | "md" | "sm" | "w-44" | "w-32" | "w-20";
+  ClassName?: string;
 }
 export default function Logo({ variant, size, ClassName }: Props) {
   switch (size) {
@@ -32,9 +32,9 @@ export default function Logo({ variant, size, ClassName }: Props) {
 
   return (
     <img
-      className={`${ClassName} ${size}`}
+      className={`${ClassName} ${size ? size : "w-32"}`}
       alt="logo"
-      src={variant === "logo_text_color" ? logoTextColor : undefined}
+      src={variant === "logo_text_color" ? logoTextColor : logoTextColor}
     />
   );
 }

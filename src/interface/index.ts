@@ -1,5 +1,5 @@
 export interface ChildrenText {
-  children: string;
+  children: string | string[] | number | number[];
   large?: boolean;
   medium?: boolean;
   small?: boolean;
