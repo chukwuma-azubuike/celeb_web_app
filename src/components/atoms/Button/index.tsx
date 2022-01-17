@@ -13,7 +13,8 @@ interface Props {
   small?: boolean;
   medium?: boolean;
   margin?: string;
-  type?: "button" | "reset" | "submit"
+  background?: string;
+  type?: "button" | "reset" | "submit";
   onClick?: () => void;
 }
 
@@ -28,16 +29,28 @@ export default function Button({
   small,
   medium,
   margin,
+  background,
   onClick,
 }: Props) {
-
   return (
     <button
       className={`
         py-3 rounded-lg font-medium text-xl font-sans shadow-xl h-14 box-border
-        ${secondary ? "text-transparent bg-clip-text bg-gradient-to-r from-lightPurple to-purple" : "text-white"} 
-        ${secondary ? "bg-transparent border-purple" : "bg-buttonGradient border-none"}
-        ${!disabled && "hover:opacity-80"} ${disabled && "opacity-25"} ${small && 'text-sm h-fit w-fit py-2 px-3'}
+        ${
+          secondary
+            ? "text-transparent bg-clip-text bg-gradient-to-r from-lightPurple to-purple"
+            : "text-white"
+        } 
+        ${
+          secondary
+            ? "bg-transparent border-purple"
+            : background
+            ? background
+            : "bg-buttonGradient border-none"
+        }
+        ${!disabled && "hover:opacity-80"} ${disabled && "opacity-25"} ${
+        small && "text-sm h-fit w-fit py-2 px-3"
+      }
         ${width ? width : "w-full"} ${className} ${margin}
         ${!disabled && "cursor-pointer"} 
       `}
@@ -45,7 +58,14 @@ export default function Button({
       disabled={loading || disabled}
       type={type}
     >
-      {loading ? <CircularProgress size={28} style={{color: secondary ? 'purple': 'inherit'}} /> : children}
+      {loading ? (
+        <CircularProgress
+          size={28}
+          style={{ color: secondary ? "purple" : "inherit" }}
+        />
+      ) : (
+        children
+      )}
     </button>
   );
 }

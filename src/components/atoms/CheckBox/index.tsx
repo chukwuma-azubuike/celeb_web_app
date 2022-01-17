@@ -5,8 +5,8 @@ import { ThemeColors } from "../../../utils/Theme";
 
 const BpIcon = styled("span")(({ theme }) => ({
   borderRadius: 20,
-  width: 20,
-  height: 20,
+  width: 25,
+  height: 25,
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
@@ -43,8 +43,8 @@ const BpCheckedIcon = styled(BpIcon)({
   borderRadius: 20,
   "&:before": {
     display: "block",
-    width: 16,
-    height: 16,
+    width: 20,
+    height: 20,
     backgroundImage:
       "url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath" +
       " fill-rule='evenodd' clip-rule='evenodd' d='M12 5c-.28 0-.53.11-.71.29L7 9.59l-2.29-2.3a1.003 " +
@@ -59,6 +59,7 @@ const BpCheckedIcon = styled(BpIcon)({
 interface Props {
   defaultChecked?: boolean;
   disabled?: boolean;
+  required?: boolean;
   onChange?: (
     event: React.SyntheticEvent<Element, Event>,
     checked: boolean
@@ -66,7 +67,7 @@ interface Props {
 }
 
 export default function CheckBox(
-  { defaultChecked, disabled, onChange }: Props,
+  { defaultChecked, disabled, required, onChange }: Props,
   props: CheckboxProps
 ) {
   return (
@@ -76,6 +77,7 @@ export default function CheckBox(
           "&:hover": { bgcolor: "transparent" },
           margin: 0,
         }}
+        required={required}
         disableRipple
         color="default"
         checkedIcon={<BpCheckedIcon />}

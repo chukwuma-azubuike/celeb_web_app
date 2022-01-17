@@ -1,5 +1,5 @@
 const APP_DATA = {
-  appName: "Celebrity Web App",
+  appName: "Celebrity App",
 };
 
 export default APP_DATA;

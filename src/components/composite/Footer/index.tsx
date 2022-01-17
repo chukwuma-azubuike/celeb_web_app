@@ -16,7 +16,7 @@ export default function Footer(props: Props) {
             id="footer-social"
           >
             {FOOTER_DATA.social.map((item, index) => (
-              <Text key={index} tone="100" large>
+              <Text key={index} tone="100" small>
                 {item.title}
               </Text>
             ))}
@@ -26,7 +26,7 @@ export default function Footer(props: Props) {
             id="footer-navigation"
           >
             {FOOTER_DATA.navigation.map((item, index) => (
-              <Text key={index} tone="100" large>
+              <Text key={index} tone="100" small>
                 {item.title}
               </Text>
             ))}

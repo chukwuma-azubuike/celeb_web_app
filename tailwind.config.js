@@ -1,3 +1,5 @@
+// import image from './src/assets/images/spin-loading.gif'
+
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   darkMode: 'class',
@@ -9,6 +11,7 @@ module.exports = {
       colors: {
         purple: '#7708BE',
         lightPurple: '#0000EA',
+        facebookBlue: '#005CFF',
         primaryGrey: {
           '400': '#222222',
           '300': '#888888',
@@ -45,7 +48,14 @@ module.exports = {
         gradient: '#7708BE'
       },
       backgroundImage: {
-        buttonGradient: 'linear-gradient(267.61deg, #7708BE 38.06%, #0000EA 96.12%)'
+        buttonGradient: 'linear-gradient(267.61deg, #7708BE 38.06%, #0000EA 96.12%)',
+        preloader: "url('/src/assets/images/spin-loading.gif')"
+      },
+      backgroundSize: {
+        '15': '5rem',
+        '25': '10rem',
+        '50': '15rem',
+        '75': '25rem'
       },
       fontFamily: {
         'primary': ['Epilogue']
@@ -59,8 +69,16 @@ module.exports = {
         'top-nav': 'auto auto',
         'footer': '200px minmax(900px, 1fr) 100px',
       },
-      gridTemplateRows:{
+      gridTemplateRows: {
         'footer': 'auto 300px',
+      },
+      width: {
+        '42': '168px',
+        '98': '444px',
+        '100': '30rem'
+      },
+      borderWidth: {
+        1: '1px',
       }
     },
   },

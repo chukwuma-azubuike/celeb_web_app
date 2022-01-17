@@ -8,8 +8,8 @@ interface Props {}
 
 export default function TopNavBar(props: Props) {
   return (
-    <nav className="p-3 sticky top-0">
-      <div className="grid gap-3 grid-cols-top-nav h-14 justify-between items-center box-border">
+    <nav className="px-3 sticky top-0 bg-white z-10 shadow-md">
+      <div className="grid gap-3 grid-cols-top-nav justify-between items-center box-border">
         <Logo />
         <AlignJustifyCenter>
           <ExpandableSearch />

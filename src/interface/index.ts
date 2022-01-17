@@ -1,5 +1,5 @@
 export interface ChildrenText {
-  children: string | string[] | number | number[];
+  children: string | string[] | number | number[] | undefined;
   large?: boolean;
   medium?: boolean;
   small?: boolean;
@@ -15,4 +15,13 @@ export interface ChildrenText {
     | "text-primaryGrey-200"
     | "text-primaryGrey-300"
     | "text-primaryGrey-400";
+  className?: string;
+}
+
+export interface AuthFormState {
+  name: string;
+  email: string;
+  birthday: string;
+  password: string;
+  confirmPassword: string;
 }

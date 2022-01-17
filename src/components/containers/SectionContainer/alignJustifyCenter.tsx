@@ -1,7 +1,7 @@
 import React from "react";
 
 interface Props {
-  children: JSX.Element | JSX.Element[] | boolean;
+  children: JSX.Element | JSX.Element[] | boolean | string | string[];
 }
 
 export default function AlignJustifyCenter({ children }: Props) {

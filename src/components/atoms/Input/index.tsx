@@ -39,12 +39,16 @@ interface State {
   placeholder: string;
   search: string;
   showPassword: boolean;
+  date?: string;
 }
 
 interface Props {
+  required?: boolean;
   search?: boolean;
   password?: boolean;
+  confirmPassword?: boolean;
   email?: boolean;
+  type?: string;
   placeholder?: string;
   error?: boolean;
   helperText?: string;
@@ -53,17 +57,21 @@ interface Props {
 
 export default function Input({
   password,
+  confirmPassword,
   email,
+  type,
   placeholder,
   search,
   error,
   helperText,
+  required,
   onChange,
 }: Props) {
   const [values, setValues] = React.useState<State>({
     email: "",
     password: "",
     placeholder: "",
+    date: "2000-01-01",
     search: "",
     showPassword: false,
   });
@@ -72,6 +80,7 @@ export default function Input({
 
   const handleChange =
     (prop: keyof State) => (event: React.ChangeEvent<HTMLInputElement>) => {
+      onChange && onChange(event);
       setValues({ ...values, [prop]: event.target.value });
       if (prop === "password") onChange && onChange(event);
     };
@@ -90,7 +99,14 @@ export default function Input({
   };
 
   return (
-    <Box sx={{ display: "flex", flexWrap: "wrap", width: "100%" }}>
+    <Box
+      sx={{
+        display: "flex",
+        flexWrap: "wrap",
+        width: "100%",
+        margin: "16px auto",
+      }}
+    >
       {search && (
         <TextField
           //   label="With normal TextField"
@@ -126,16 +142,53 @@ export default function Input({
       )}
       {placeholder && (
         <FormControl sx={{ width: "100%" }} variant="outlined">
-          <InputLabel htmlFor="outlined-adornment-password">
+          <InputLabel
+            shrink={type === "date" ? true : undefined}
+            htmlFor={`${placeholder}`}
+          >
             {placeholder}
           </InputLabel>
           <CustomInput
-            id="outlined-adornment-placeholder"
+            required={required}
+            id={`outlined-adornment-${placeholder}`}
             label={placeholder}
-            type="text"
-            value={values.placeholder}
-            onChange={handleChange("placeholder")}
+            type={type || "text"}
+            value={type === "date" ? values.date : values.placeholder}
+            onChange={
+              type === "date"
+                ? handleChange("date")
+                : handleChange("placeholder")
+            }
             error={error}
+          />
+          <FormHelperText error={error}>{helperText}</FormHelperText>
+        </FormControl>
+      )}
+      {confirmPassword && (
+        <FormControl sx={{ width: "100%" }} variant="outlined">
+          <InputLabel htmlFor="outlined-adornment-confirm-password">
+            Confirm Password
+          </InputLabel>
+          <CustomInput
+            required
+            id="outlined-adornment-confirm-password"
+            label="Confirm Password"
+            type={values.showPassword ? "text" : "password"}
+            value={values.password}
+            onChange={handleChange("password")}
+            error={error}
+            endAdornment={
+              <InputAdornment position="end">
+                <IconButton
+                  aria-label="toggle password visibility"
+                  onClick={handleClickShowPassword}
+                  onMouseDown={handleMouseDownPassword}
+                  edge="end"
+                >
+                  {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                </IconButton>
+              </InputAdornment>
+            }
           />
           <FormHelperText error={error}>{helperText}</FormHelperText>
         </FormControl>
@@ -146,6 +199,7 @@ export default function Input({
             Password
           </InputLabel>
           <CustomInput
+            required
             id="outlined-adornment-password"
             label="Password"
             type={values.showPassword ? "text" : "password"}
@@ -172,6 +226,7 @@ export default function Input({
         <FormControl sx={{ width: "100%" }} variant="outlined">
           <InputLabel htmlFor="outlined-adornment-password">Email</InputLabel>
           <CustomInput
+            required
             id="outlined-adornment-email"
             label="Email"
             type="email"
@@ -182,6 +237,20 @@ export default function Input({
           <FormHelperText error={error}>{helperText}</FormHelperText>
         </FormControl>
       )}
+      {/* {date && (
+        <FormControl sx={{ width: "100%" }} variant="outlined">
+          <InputLabel htmlFor="outlined-adornment-password">Email</InputLabel>
+          <CustomInput
+            id="outlined-adornment-date"
+            label="Email"
+            type="email"
+            value={values.email}
+            onChange={handleChange("email")}
+            error={error}
+          />
+          <FormHelperText error={error}>{helperText}</FormHelperText>
+        </FormControl>
+      )} */}
     </Box>
   );
 }

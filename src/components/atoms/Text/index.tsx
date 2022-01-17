@@ -10,6 +10,7 @@ export default function Text({
   light,
   bold,
   tone,
+  className
 }: ChildrenText) {
 
   switch (tone) {
@@ -32,7 +33,7 @@ export default function Text({
   return (
     <p
       className={`
-      text-base my-2 dark:text-white
+      text-base my-2 dark:text-white ${className}
       ${large && 'text-lg'} ${medium && 'text-base'} ${small && 'text-sm'} ${xSmall && 'text-xs'}
       ${light && "font-light"} ${bold && "font-bold"}
       ${tone ? tone : 'text-primaryGrey-400'}
