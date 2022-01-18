@@ -6,17 +6,20 @@ import Text from "../../../components/atoms/Text";
 import Page from "../../../components/containers/PageContainer";
 import Section from "../../../components/containers/SectionContainer";
 import APP_DATA from "../../../data/index.data";
-import SignupForm from "./form";
+import LoginForm from "./form";
 
-export default function Signup() {
+interface Props {
+  status?: string;
+}
+export default function Login({ status, ...props }: Props) {
   return (
     <Page authWidth>
       <div className=" ">
         <Header className=" w-42" bold>
-          Welcome to {APP_DATA.appName}{" "}
+          Login to {APP_DATA.appName}{" "}
         </Header>
         <Text className="w-56" tone="300" light>
-          Book personalized video shoutouts from your favourite stars
+          Pick up from where you left{" "}
         </Text>
       </div>
       <div>
@@ -24,7 +27,7 @@ export default function Signup() {
           Continue with Facebook
         </Button>
         <Divider width="w-100">Or continue with email</Divider>
-        <SignupForm />
+        <LoginForm />
       </div>
     </Page>
   );

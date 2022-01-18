@@ -27,7 +27,7 @@ export function ToggleSwitch({ label, defaultChecked, onChange }: Props) {
 export function DarkModeSwitch({ label, onChange }: Props) {
   return (
     <FormControlLabel
-      control={<MaterialUISwitch sx={{ m: 1, ml: 0 }} />}
+      control={<MaterialUISwitch sx={{ m: 1 }} />}
       label={label}
       onChange={onChange}
     />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { SyntheticEvent } from "react";
 import Button from "../../../components/atoms/Button";
 import CheckBox from "../../../components/atoms/CheckBox";
 import Input from "../../../components/atoms/Input";
@@ -10,12 +10,14 @@ import { AuthFormState } from "../../../interface";
 import Api from "../../../utils/Api";
 import { inputPropTypeWithRegExp } from "../../../utils/inputValidation";
 
-export default function SignupForm() {
+export default function LoginForm() {
   const {
     values,
+    checked,
     helperText,
     error,
     processing,
+    setChecked,
     setValues,
     setHelperText,
     setError,
@@ -37,9 +39,13 @@ export default function SignupForm() {
       }
     };
 
+  const handleCheck = () => {
+    setChecked(!checked);
+  };
+
   const handleButtonState = () => {
-    if (Object.values(error).indexOf(true) > -1) return true;
-    else if (!Object.values(error).indexOf(false)) return false;
+    if (Object.values(error).indexOf(true) > 3) return false;
+    else return true;
   };
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement> | undefined) => {
@@ -52,21 +58,6 @@ export default function SignupForm() {
   return (
     <form onSubmit={handleSubmit}>
       <Input
-        placeholder="First Name"
-        onChange={handleChange("name")}
-        required
-        helperText={helperText.name}
-        error={error.name}
-      />
-      <Input
-        placeholder="Your Birthday"
-        onChange={handleChange("birthday")}
-        type="date"
-        helperText={helperText.birthday}
-        error={error.birthday}
-        required
-      />
-      <Input
         email
         onChange={handleChange("email")}
         helperText={helperText.email}
@@ -78,27 +69,21 @@ export default function SignupForm() {
         helperText={helperText.password}
         error={error.password}
       />
-      <Input
-        confirmPassword
-        onChange={handleChange("confirmPassword")}
-        helperText={helperText.confirmPassword}
-        error={error.confirmPassword}
-      />
       <Button type="submit" disabled={handleButtonState()} loading={processing}>
-        Create your account
+        Login
       </Button>
       <div className="flex justify-center mt-2">
         <Text tone="300" light className="mr-1">
-          Already have an account?
+          Don't have an account?
         </Text>
         <Link tone="300" bold>
-          Sign in
+          Sign up
         </Link>
       </div>
       <div className="flex justify-between items-centre">
-        <CheckBox required />
+        <CheckBox checked={checked} onChange={handleCheck} required />
         <Text light className="w-5/6">
-          {`By creating an account you agree to ${APP_DATA.appName}'s Terms of service,
+          {`By logging in, you agree to ${APP_DATA.appName}'s Terms of service,
           including Additional terms, and Privacy policy.`}
         </Text>
       </div>

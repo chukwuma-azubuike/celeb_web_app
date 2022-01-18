@@ -29,10 +29,7 @@ const BpIcon = styled("span")(({ theme }) => ({
   },
   "input:disabled ~ &": {
     boxShadow: "none",
-    background:
-      theme.palette.mode === "dark"
-        ? "rgba(57,75,89,.5)"
-        : "rgba(206,217,224,.5)",
+    background: theme.palette.mode === "dark" ? "rgba(57,75,89,.5)" : "rgba(206,217,224,.5)",
   },
 }));
 
@@ -60,14 +57,12 @@ interface Props {
   defaultChecked?: boolean;
   disabled?: boolean;
   required?: boolean;
-  onChange?: (
-    event: React.SyntheticEvent<Element, Event>,
-    checked: boolean
-  ) => void;
+  checked?: boolean;
+  onChange?: (event: React.SyntheticEvent<Element, Event>, checked: boolean) => void;
 }
 
 export default function CheckBox(
-  { defaultChecked, disabled, required, onChange }: Props,
+  { defaultChecked, disabled, required, checked, onChange }: Props,
   props: CheckboxProps
 ) {
   return (
@@ -77,6 +72,7 @@ export default function CheckBox(
           "&:hover": { bgcolor: "transparent" },
           margin: 0,
         }}
+        checked={checked}
         required={required}
         disableRipple
         color="default"

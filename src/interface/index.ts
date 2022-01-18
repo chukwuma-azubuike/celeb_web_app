@@ -15,6 +15,8 @@ export interface ChildrenText {
     | "text-primaryGrey-200"
     | "text-primaryGrey-300"
     | "text-primaryGrey-400";
+  url?: string;
+  blank?: boolean;
   className?: string;
 }
 

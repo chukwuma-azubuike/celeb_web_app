@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 // require("dotenv").config();
 
 const defaults = {
-  baseURL: process.env.BASE_URL || "http://localhost:8000",
+  baseURL: process.env.BASE_URL || "http://localhost:8000/api",
   headers: () => ({
     "Content-Type": "application/json",
     // Authorization: "token", // getStoredAuthToken() ? `Bearer ${getStoredAuthToken()}` : undefined,

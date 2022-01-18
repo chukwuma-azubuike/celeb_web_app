@@ -10,6 +10,7 @@ interface ErrorState {
 }
 
 export default function useHandleAuthForm() {
+  const [checked, setChecked] = React.useState<boolean>(true);
   const [values, setValues] = React.useState<AuthFormState>({
     name: "",
     email: "",
@@ -51,9 +52,11 @@ export default function useHandleAuthForm() {
 
   return {
     values,
+    checked,
     helperText,
     error,
     processing,
+    setChecked,
     setValues,
     setHelperText,
     setError,
