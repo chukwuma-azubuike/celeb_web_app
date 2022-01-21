@@ -1,20 +1,19 @@
 import React from "react";
 import Button from "../../../components/atoms/Button";
 import Divider from "../../../components/atoms/Divider";
-import Header from "../../../components/atoms/Header";
+import SubHeader from "../../../components/atoms/SubHeader";
 import Text from "../../../components/atoms/Text";
 import Page from "../../../components/containers/PageContainer";
-import Section from "../../../components/containers/SectionContainer";
 import APP_DATA from "../../../data/index.data";
 import SignupForm from "./form";
 
 export default function Signup() {
   return (
-    <Page authWidth>
+    <Page noPreloader authWidth pad>
       <div className=" ">
-        <Header className=" w-42" bold>
+        <SubHeader className=" w-42" bold>
           Welcome to {APP_DATA.appName}{" "}
-        </Header>
+        </SubHeader>
         <Text className="w-56" tone="300" light>
           Book personalized video shoutouts from your favourite stars
         </Text>

@@ -1,0 +1,8 @@
+.scroll-menu {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.scroll-menu::-webkit-scrollbar {
+    display: none;
+}

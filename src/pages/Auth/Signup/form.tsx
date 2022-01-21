@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Button from "../../../components/atoms/Button";
 import CheckBox from "../../../components/atoms/CheckBox";
 import Input from "../../../components/atoms/Input";
-import Link from "../../../components/atoms/Link";
+import TextLink from "../../../components/atoms/Link";
 import Text from "../../../components/atoms/Text";
 import APP_DATA from "../../../data/index.data";
 import useHandleAuthForm from "../../../hooks/Auth";
@@ -91,9 +92,9 @@ export default function SignupForm() {
         <Text tone="300" light className="mr-1">
           Already have an account?
         </Text>
-        <Link tone="300" bold>
+        <TextLink url="/login" bold tone="300">
           Sign in
-        </Link>
+        </TextLink>
       </div>
       <div className="flex justify-between items-centre">
         <CheckBox required />

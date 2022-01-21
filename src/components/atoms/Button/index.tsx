@@ -10,6 +10,7 @@ interface Props {
   loading?: boolean;
   primary?: boolean;
   secondary?: boolean;
+  plain?: boolean;
   small?: boolean;
   medium?: boolean;
   margin?: string;
@@ -27,6 +28,7 @@ export default function Button({
   secondary,
   type,
   small,
+  plain,
   medium,
   margin,
   background,
@@ -35,7 +37,7 @@ export default function Button({
   return (
     <button
       className={`
-        py-3 rounded-lg font-medium text-xl font-sans shadow-xl h-14 box-border
+        py-2 rounded-lg font-medium text-lg font-sans shadow-xl box-border
         ${
           secondary
             ? "text-transparent bg-clip-text bg-gradient-to-r from-lightPurple to-purple"
@@ -46,6 +48,8 @@ export default function Button({
             ? "bg-transparent border-purple"
             : background
             ? background
+            : plain
+            ? "bg-primaryGrey-200 bg-transparent border-none"
             : "bg-buttonGradient border-none"
         }
         ${!disabled && "hover:opacity-80"} ${disabled && "opacity-25"} ${
@@ -59,10 +63,7 @@ export default function Button({
       type={type}
     >
       {loading ? (
-        <CircularProgress
-          size={28}
-          style={{ color: secondary ? "purple" : "inherit" }}
-        />
+        <CircularProgress size={20} style={{ color: secondary ? "purple" : "inherit" }} />
       ) : (
         children
       )}

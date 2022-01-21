@@ -71,7 +71,7 @@ export default function TestApp() {
         ]}
         finishInfo="And We Are Live!!!"
       />
-      <RatingStar handleRating={(rating) => null} />
+      <RatingStar rating={4.5} handleRating={(rating) => null} />
       {/* <Chips onClick={(e) => console.log("Event==>", e)} /> */}
       <div className="flex">
         <Chip

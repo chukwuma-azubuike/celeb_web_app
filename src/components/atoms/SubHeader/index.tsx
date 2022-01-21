@@ -1,7 +1,7 @@
 import React from "react";
 import { ChildrenText } from "../../../interface";
 
-export default function Header({
+export default function SubHeader({
   children,
   bold,
   light,
@@ -9,7 +9,7 @@ export default function Header({
   className,
 }: ChildrenText) {
   return (
-    <h1
+    <h2
       className={`my-2 ${className}
       ${bold && "font-bold"} ${light && "font-light"} 
       ${tone === "100" && "text-primaryGrey-100"} 
@@ -19,6 +19,6 @@ export default function Header({
       `}
     >
       {children}
-    </h1>
+    </h2>
   );
 }

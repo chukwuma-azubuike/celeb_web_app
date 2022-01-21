@@ -77,6 +77,9 @@ module.exports = {
         '98': '444px',
         '100': '30rem'
       },
+      height: {
+        '112': '32rem'
+      },
       borderWidth: {
         1: '1px',
       }

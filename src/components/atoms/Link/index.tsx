@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { ChildrenText } from "../../../interface";
 
-export default function Link({
+export default function TextLink({
   children,
   large,
   medium,
@@ -32,17 +33,19 @@ export default function Link({
   }
 
   return (
-    <a
+    <Link
+      color={tone}
+      style={{ textDecoration: "none", margin: "auto 0" }}
       className={`
       text-base my-2 dark:text-white no-underline ${className} 
       ${large && "text-lg"} ${medium && "text-base"} ${small && "text-sm"} ${xSmall && "text-xs"}
       ${light && "font-light"} ${bold && "font-bold"}
       ${tone ? tone : "decoration-primaryGrey-400"}
       `}
-      href={url}
+      to={url ? url : "/"}
       target={blank ? "_blank" : undefined}
     >
       {children}
-    </a>
+    </Link>
   );
 }

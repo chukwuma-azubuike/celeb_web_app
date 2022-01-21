@@ -19,10 +19,13 @@ const labels: { [index: string]: string } = {
 interface Props {
   handleRating: (newValue: number | null) => void;
   readOnly?: boolean;
+  rating: number;
+  label?: boolean;
+  size?: "small" | "medium" | "large";
 }
 
-export default function RatingStar({ handleRating, readOnly }: Props) {
-  const [value, setValue] = React.useState<number | null>(4.5);
+export default function RatingStar({ handleRating, readOnly, rating, label, size }: Props) {
+  const [value, setValue] = React.useState<number | null>(rating);
   const [hover, setHover] = React.useState(-1);
 
   return (
@@ -34,6 +37,7 @@ export default function RatingStar({ handleRating, readOnly }: Props) {
       }}
     >
       <Rating
+        size={size}
         name="hover-feedback"
         value={value}
         precision={0.5}
@@ -47,9 +51,7 @@ export default function RatingStar({ handleRating, readOnly }: Props) {
         emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
         readOnly={readOnly}
       />
-      {value !== null && (
-        <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : value]}</Box>
-      )}
+      {value !== null && label && <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : value]}</Box>}
     </Box>
   );
 }

@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import Header from "../../components/atoms/Header";
 import Page from "../../components/containers/PageContainer";
 import Section from "../../components/containers/SectionContainer";
+import { connect } from "react-redux";
 
 interface Props {
   status?: string;

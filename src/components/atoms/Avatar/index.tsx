@@ -39,7 +39,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
   },
 }));
 
-export default function BadgeAvatars({ alert, imageURL }: AvatarProps) {
+export default function BadgeAvatars({ initials, alert, imageURL }: AvatarProps) {
   return (
     <Stack direction="row" spacing={2}>
       <StyledBadge
@@ -47,10 +47,7 @@ export default function BadgeAvatars({ alert, imageURL }: AvatarProps) {
         anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
         variant={alert ? "dot" : "standard"}
       >
-        <Avatar
-          alt="Tutu"
-          src={imageURL}
-        />
+        <Avatar alt={initials} src={imageURL} />
       </StyledBadge>
     </Stack>
   );
