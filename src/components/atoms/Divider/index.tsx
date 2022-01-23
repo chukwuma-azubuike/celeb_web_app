@@ -1,5 +1,4 @@
 import React from "react";
-import AlignJustifyCenter from "../../containers/SectionContainer/alignJustifyCenter";
 import Text from "../Text";
 
 interface Prop {
@@ -9,7 +8,6 @@ interface Prop {
 
 export default function Divider({ children, width }: Prop) {
   return (
-    // <AlignJustifyCenter>
     <div className=" flex justify-between items-center">
       <div className=" w-full h-0 border-1 border-b-0 border-x-0 border-solid border-primaryGrey-300 opacity-7" />
       <Text
@@ -21,6 +19,5 @@ export default function Divider({ children, width }: Prop) {
       </Text>
       <div className=" w-full h-0 border-1 border-b-0 border-x-0 border-solid border-primaryGrey-300 opacity-7" />
     </div>
-    // </AlignJustifyCenter>
   );
 }

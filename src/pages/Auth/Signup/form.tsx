@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Button from "../../../components/atoms/Button";
 import CheckBox from "../../../components/atoms/CheckBox";
 import Input from "../../../components/atoms/Input";
@@ -47,7 +46,7 @@ export default function SignupForm() {
     event?.preventDefault();
     setProcessing(true);
     setTimeout(() => setProcessing(false), 5000);
-    let response = await Api.get("/users");
+    // let response = await Api.get("/users");
   };
 
   return (
@@ -88,17 +87,17 @@ export default function SignupForm() {
       <Button type="submit" disabled={handleButtonState()} loading={processing}>
         Create your account
       </Button>
-      <div className="flex justify-center mt-2">
-        <Text tone="300" light className="mr-1">
+      <div className="flex justify-center mt-4">
+        <Text small tone="300" light className="mr-1">
           Already have an account?
         </Text>
-        <TextLink url="/login" bold tone="300">
+        <TextLink small url="/login" bold tone="300">
           Sign in
         </TextLink>
       </div>
       <div className="flex justify-between items-centre">
         <CheckBox required />
-        <Text light className="w-5/6">
+        <Text small light className="w-5/6 mt-2">
           {`By creating an account you agree to ${APP_DATA.appName}'s Terms of service,
           including Additional terms, and Privacy policy.`}
         </Text>

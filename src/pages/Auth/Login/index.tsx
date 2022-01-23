@@ -17,7 +17,7 @@ export default function Login({ status, ...props }: Props) {
         <SubHeader className=" w-42" bold>
           Login to {APP_DATA.appName}{" "}
         </SubHeader>
-        <Text className="w-56" tone="300" light>
+        <Text className="w-56 mb-4" tone="300" light>
           Pick up from where you left{" "}
         </Text>
       </div>

@@ -20,13 +20,13 @@ export default function Item({ status, ...props }: Props) {
     <div
       className={`
       rounded-[36px] p-3 grid-rows-[auto auto auto] grid gap-1 box-border
-      ${props.small ? "w-60" : "w-80"}
+      ${props.small ? "w-56 md:w-60" : "w-80"}
       `}
     >
       <div
         className={`
-        ${props.small ? "h-64" : "h-96"}
-         rounded-[30px] w-full bg-no-repeat bg-center bg-cover p-3
+        ${props.small ? "h-56 md:h-64" : "h-96"}
+         rounded-[30px] w-full bg-no-repeat bg-center bg-cover
          `}
         style={{ backgroundImage: `url(${props.imageURL})` }}
       />

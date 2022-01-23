@@ -5,7 +5,6 @@ import WelcomeSection from "../../../pages/Home/WelcomeSection";
 import Button from "../../atoms/Button";
 import TextLink from "../../atoms/Link";
 import ScrollableContainer from "../../containers/ScrollableContainer";
-import AlignJustifyCenter from "../../containers/SectionContainer/alignJustifyCenter";
 import Item from "../Item";
 
 interface HomeWelcomeProps {
@@ -78,14 +77,14 @@ export function FeaturedSlide(props: FeaturedSlideProps) {
           <ArrowRight color="action" />
         </Button>
       </div>
-      <ScrollableContainer id={props.id} className='grid gap-4 grid-flow-col' >
+      <ScrollableContainer id={props.id} className='flex' >
         {props.items.map((item, i) => (
           <Item
             key={i}
             name={item.name}
             imageURL={item.imageURL}
             status="Loaded"
-            rating={5}
+            rating={item.rating}
             fee={item.fee}
             category={item.category}
             online={item.online}

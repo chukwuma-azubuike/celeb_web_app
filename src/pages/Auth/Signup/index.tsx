@@ -14,7 +14,7 @@ export default function Signup() {
         <SubHeader className=" w-42" bold>
           Welcome to {APP_DATA.appName}{" "}
         </SubHeader>
-        <Text className="w-56" tone="300" light>
+        <Text className="w-56 mb-4" tone="300" light>
           Book personalized video shoutouts from your favourite stars
         </Text>
       </div>

@@ -1,5 +1,4 @@
-import React, { SyntheticEvent } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 import Button from "../../../components/atoms/Button";
 import CheckBox from "../../../components/atoms/CheckBox";
 import Input from "../../../components/atoms/Input";
@@ -53,7 +52,7 @@ export default function LoginForm() {
     event?.preventDefault();
     setProcessing(true);
     setTimeout(() => setProcessing(false), 5000);
-    let response = await Api.get("/users");
+    // let response = await Api.get("/users");
   };
 
   return (
@@ -74,16 +73,16 @@ export default function LoginForm() {
         Login
       </Button>
       <div className="flex justify-center mt-2">
-        <Text tone="300" light className="mr-1 my-2">
+        <Text small tone="300" light className="mr-1 my-2">
           Don't have an account?
         </Text>
-        <TextLink url="/signup" bold tone="300">
+        <TextLink small url="/signup" bold tone="300">
           Sign up
         </TextLink>
       </div>
       <div className="flex justify-between items-centre">
         <CheckBox checked={checked} onChange={handleCheck} required />
-        <Text light className="w-5/6">
+        <Text small light className="w-5/6">
           {`By logging in, you agree to ${APP_DATA.appName}'s Terms of service,
           including Additional terms, and Privacy policy.`}
         </Text>
