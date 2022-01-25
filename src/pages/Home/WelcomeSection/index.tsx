@@ -15,7 +15,7 @@ export default function WelcomeSection({ ...props }: Props) {
   return (
     <div
       style={{ backgroundImage: `url(${props.imageURL})` }}
-      className={`w-full h-96 bg-no-repeat bg-center bg-cover box-border`}
+      className={`w-full h-[570px] bg-no-repeat bg-center bg-cover box-border`}
     >
       <div className={`max-w-lg absolute bottom-0 p-3 md:p-6`}>
         <Text bold className=" text-pink-500 ">

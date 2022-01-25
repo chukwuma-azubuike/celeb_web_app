@@ -3,6 +3,7 @@ import React from "react";
 import Carousel from "react-material-ui-carousel";
 import WelcomeSection from "../../../pages/Home/WelcomeSection";
 import Button from "../../atoms/Button";
+import Header from "../../atoms/Header";
 import TextLink from "../../atoms/Link";
 import ScrollableContainer from "../../containers/ScrollableContainer";
 import Item from "../Item";
@@ -20,6 +21,7 @@ interface HomeWelcomeProps {
 interface FeaturedSlideProps {
   id: string;
   seeAll?: string;
+  status: "loading" | "errored" | "loaded";
   items: {
     name: string;
     imageURL: string;
@@ -32,7 +34,7 @@ interface FeaturedSlideProps {
 
 export function HomeWelcomeSlide(props: HomeWelcomeProps) {
   return (
-    <Carousel indicators={false}>
+    <Carousel indicators={false} fullHeightHover>
       {props.items.map((item, i) => (
         <WelcomeSection
           key={i}
@@ -56,41 +58,47 @@ export function FeaturedSlide(props: FeaturedSlideProps) {
 
   return (
     <div className="relative">
-      <div className=" md:flex absolute -top-12 right-3 hidden">
+      <div className="absolute -top-12 right-3 flex">
         {props.seeAll && (
           <TextLink bold tone="400" url={props.seeAll}>
             See all
           </TextLink>
         )}
-        <Button
-          plain
-          className=" rounded-full mx-1 ml-2 py-1 w-8 h-8"
-          onClick={handleScroll(props.id, "-")}
-        >
-          <ArrowLeft color="action" />
-        </Button>
-        <Button
-          plain
-          className=" rounded-full mx-1 py-1 h-8 w-8"
-          onClick={handleScroll(props.id, "+")}
-        >
-          <ArrowRight color="action" />
-        </Button>
+        <div className="hidden md:block">
+          <Button
+            plain
+            className="rounded-full mx-1 ml-2 py-1 w-8 h-8"
+            onClick={handleScroll(props.id, "-")}
+          >
+            <ArrowLeft color="action" />
+          </Button>
+          <Button
+            plain
+            className="rounded-full mx-1 py-1 h-8 w-8"
+            onClick={handleScroll(props.id, "+")}
+          >
+            <ArrowRight color="action" />
+          </Button>
+        </div>
       </div>
-      <ScrollableContainer id={props.id} className='flex' >
-        {props.items.map((item, i) => (
-          <Item
-            key={i}
-            name={item.name}
-            imageURL={item.imageURL}
-            status="Loaded"
-            rating={item.rating}
-            fee={item.fee}
-            category={item.category}
-            online={item.online}
-            small
-          />
-        ))}
+      <ScrollableContainer id={props.id} className="flex">
+        {props.status === "loaded" ? (
+          props.items.map((item, i) => (
+            <Item
+              key={i}
+              name={item.name}
+              imageURL={item.imageURL}
+              status={props.status}
+              rating={item.rating}
+              fee={item.fee}
+              category={item.category}
+              online={item.online}
+              small
+            />
+          ))
+        ) : (
+          <Header>Loading...</Header>
+        )}
       </ScrollableContainer>
     </div>
   );

@@ -37,7 +37,7 @@ export const featuredCarousel = [
     rating: 4.5,
     fee: 75000,
     category: "Music",
-    online: true,
+    online: false,
   },
   {
     name: "Mercy Chinwo",
@@ -57,7 +57,7 @@ export const featuredCarousel = [
     rating: 4,
     fee: 105000,
     category: "Music",
-    online: true,
+    online: false,
   },
   {
     name: "Basket Mouth",
@@ -77,7 +77,7 @@ export const featuredCarousel = [
     rating: 4.5,
     fee: 110000,
     category: "Music",
-    online: true,
+    online: false,
   },
 ];
 
@@ -90,7 +90,7 @@ export const newAndHot = [
     rating: 4.5,
     fee: 165000,
     category: "Music",
-    online: true,
+    online: false,
   },
   {
     name: "Taomaa",
@@ -120,7 +120,7 @@ export const newAndHot = [
     rating: 4,
     fee: 100000,
     category: "Comedy",
-    online: true,
+    online: false,
   },
   {
     name: "Jidenna",
@@ -131,5 +131,57 @@ export const newAndHot = [
     fee: 80000,
     category: "Music",
     online: true,
+  },
+];
+
+export const trending = [
+  {
+    name: "Ayra Starr",
+    imageURL:
+      "https://cdn.pmnewsnigeria.com/wp-content/uploads/2021/07/345C9F13-4043-4A1F-9FFA-CAEB657F8496.jpeg",
+    status: "Loaded",
+    rating: 4.5,
+    fee: 125000,
+    category: "Music",
+    online: true,
+  },
+  {
+    name: "Omah Lay",
+    imageURL: "https://factboyz.com/wp-content/uploads/2021/03/omah-lay.jpg",
+    status: "Loaded",
+    rating: 4.5,
+    fee: 140000,
+    category: "Music",
+    online: true,
+  },
+  {
+    name: "Sabinus",
+    imageURL:
+      "data:image/jpeg;base64,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",
+    status: "Loaded",
+    rating: 4,
+    fee: 93000,
+    category: "Comedy",
+    online: false,
+  },
+  {
+    name: "Mercy Aigbe",
+    imageURL:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsDiksWc-bpYEUTI8PexP3iWYYQEXL7k5Cew&usqp=CAU",
+    status: "Loaded",
+    rating: 5,
+    fee: 105000,
+    category: "Movies",
+    online: true,
+  },
+  {
+    name: "Tems",
+    imageURL:
+      "https://www.rollingstone.com/wp-content/uploads/2021/09/Tems-Press-Photo-2-.jpg?resize=1800,1200&w=1800",
+    status: "Loaded",
+    rating: 5,
+    fee: 130000,
+    category: "Music",
+    online: false,
   },
 ];

@@ -7,3 +7,10 @@ export const getFeaturedListings = (data: AxiosResponse) => {
     payload: data.data,
   };
 };
+
+export const toggleSideNav = (data: boolean) => {
+  return {
+    type: homeActions.TOGGLE_SIDE_NAV,
+    payload: data,
+  };
+};

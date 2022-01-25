@@ -21,6 +21,11 @@ const reducer = (store = loadState(), action: { type: string; payload: any }) =>
         darkMode: action.payload,
       };
     //Home Page
+    case homeActions.TOGGLE_SIDE_NAV:
+      return {
+        ...store,
+        sideNavOpen: action.payload,
+      };
     case homeActions.FEATURED_LISTINGS:
       return {
         ...store,
