@@ -4,7 +4,7 @@ import "./index.css";
 interface Prop {
   children: JSX.Element | JSX.Element[];
   id: string;
-  className: string;
+  className?: string;
 }
 
 export default function ScrollableContainer({ children, ...props }: Prop) {

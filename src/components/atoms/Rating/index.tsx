@@ -17,7 +17,7 @@ const labels: { [index: string]: string } = {
 };
 
 interface Props {
-  handleRating: (newValue: number | null) => void;
+  handleRating?: (newValue: number | null) => void;
   readOnly?: boolean;
   rating: number;
   label?: boolean;
@@ -43,7 +43,7 @@ export default function RatingStar({ handleRating, readOnly, rating, label, size
         precision={0.5}
         onChange={(event, newValue) => {
           setValue(newValue);
-          handleRating(newValue);
+          handleRating && handleRating(newValue);
         }}
         onChangeActive={(event, newHover) => {
           setHover(newHover);

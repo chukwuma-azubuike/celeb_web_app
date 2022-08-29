@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 // require("dotenv").config();
 
 const defaults = {
-  baseURL: process.env.BASE_URL || "http://localhost:8000/api",
+  baseURL: process.env.BASE_URL,
   headers: () => ({
     "Content-Type": "application/json",
     // Authorization: "token", // getStoredAuthToken() ? `Bearer ${getStoredAuthToken()}` : undefined,
@@ -38,9 +38,7 @@ const api = (
         "Something went wrong. Please check your internet connection or contact our support.",
       //   paramsSerializer: objectToQueryString,
     }).then(
-      (response) => {
-        resolve(response.data);
-      },
+      (response) => resolve(response),
       (error) => {
         if (error.response) {
           if (error.response.data.error.code === "INVALID_TOKEN") {

@@ -15,7 +15,7 @@ interface Props {
 
 function TopNavBar({ toggleSideNav }: Props) {
   return (
-    <nav className="px-5 sticky top-0 bg-white z-10 shadow-md">
+    <nav className="px-5 sticky top-0 bg-white z-10 shadow-md dark:bg-primaryGrey-400">
       <div className="grid gap-3 grid-cols-top-nav justify-between items-center box-border">
         <Logo />
         <AlignJustifyCenter>

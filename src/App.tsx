@@ -11,14 +11,14 @@ import SideNavBar from "./components/composite/SideNavBar";
 
 function App() {
   useEffect(() => {
-    // var mode = new darkMode();
-    // mode.setDarkMode();
+    var mode = new darkMode();
+    mode.setDarkMode();
   }, []);
 
   return (
     <Provider store={store}>
       <ThemeProvider theme={muiThemeOveride}>
-        <div className="font-sans bg-white">
+        <div className="font-sans bg-white dark:bg-primaryGrey-400">
           <TopNavBar />
           <SideNavBar />
           <RoutesHandler />

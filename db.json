@@ -1,0 +1,76 @@
+{
+  "celeb": [
+    {
+      "id": 1,
+      "name": "Tu Baba",
+      "category": "Music",
+      "video": [["https://www.youtube.com/watch?v=R7Q5DsXAKfw"]],
+      "rating": 4.5,
+      "reviews": [{}, {}, {}],
+      "fans": [{}, {}, {}],
+      "imageURL": [""],
+      "bio": "Nothing dey happen!",
+      "online": true
+    },
+    {
+      "id": 2,
+      "name": "Cobhams Asuquo",
+      "category": "Music",
+      "video": [["https://www.youtube.com/watch?v=R7Q5DsXAKfw"]],
+      "rating": 5,
+      "reviews": [{}, {}, {}],
+      "fans": [{}, {}, {}],
+      "imageURL": [""],
+      "bio": "Beautiful people everywhere",
+      "online": true
+    },
+    {
+      "id": 1,
+      "name": "Tu Baba",
+      "category": "music",
+      "video": [["https://www.youtube.com/watch?v=R7Q5DsXAKfw"]],
+      "rating": 4.5,
+      "reviews": [{}, {}, {}],
+      "fans": [{}, {}, {}],
+      "imageURL": [""],
+      "bio": "Nothing dey happen!",
+      "online": true
+    },
+    {
+      "id": 1,
+      "name": "Tu Baba",
+      "category": "music",
+      "video": [["https://www.youtube.com/watch?v=R7Q5DsXAKfw"]],
+      "rating": 4.5,
+      "reviews": [{}, {}, {}],
+      "fans": [{}, {}, {}],
+      "imageURL": [""],
+      "bio": "Nothing dey happen!",
+      "online": true
+    },
+    {
+      "id": 1,
+      "name": "Tu Baba",
+      "category": "music",
+      "video": [["https://www.youtube.com/watch?v=R7Q5DsXAKfw"]],
+      "rating": 4.5,
+      "reviews": [{}, {}, {}],
+      "fans": [{}, {}, {}],
+      "imageURL": [""],
+      "bio": "Nothing dey happen!",
+      "online": true
+    },
+    {
+      "id": 1,
+      "name": "Tu Baba",
+      "category": "music",
+      "video": [["https://www.youtube.com/watch?v=R7Q5DsXAKfw"]],
+      "rating": 4.5,
+      "reviews": [{}, {}, {}],
+      "fans": [{}, {}, {}],
+      "imageURL": [""],
+      "bio": "Nothing dey happen!",
+      "online": true
+    }
+  ]
+}

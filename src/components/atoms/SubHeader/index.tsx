@@ -10,7 +10,7 @@ export default function SubHeader({
 }: ChildrenText) {
   return (
     <h2
-      className={`my-2 ${className}
+      className={`my-2 dark:text-white ${className}
       ${bold && "font-bold"} ${light && "font-light"} 
       ${tone === "100" && "text-primaryGrey-100"} 
       ${tone === "200" && "text-primaryGrey-200"}

@@ -1,15 +1,26 @@
 import { applyMiddleware, createStore, Store } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
+import { VendorProfileTypes } from "./ActionTypes/Profile";
 import reducer from "./reducers";
 var throttle = require("lodash/throttle");
+
+
+interface DefaultInitState {
+  vendorProfile?: VendorProfileTypes | null
+}
+
+const initialState: DefaultInitState = {
+  vendorProfile: null
+};
+
 
 //Load state from local storage
 export const loadState = () => {
   try {
     const serializeState = localStorage.getItem("state");
     if (serializeState === null) {
-      return undefined;
+      return initialState;
     }
     return JSON.parse(serializeState);
   } catch (err) {
@@ -34,7 +45,7 @@ const store = createStore(reducer, persistedState, composeWithDevTools(applyMidd
 store.subscribe(
   throttle(() => {
     saveState(store.getState());
-  }, 1000)
+  }, 50)
 );
 
 export default store;

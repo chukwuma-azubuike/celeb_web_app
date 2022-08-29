@@ -27,3 +27,9 @@ export interface AuthFormState {
   password: string;
   confirmPassword: string;
 }
+
+export interface ResponseObject {
+  data?: any;
+  status: boolean | string;
+  message?: string;
+}
